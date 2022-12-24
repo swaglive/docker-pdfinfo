@@ -10,6 +10,7 @@ ARG         repo=freedesktop/poppler
 RUN         apk add --no-cache --virtual .build-deps \
                 build-base \
                 cmake \
+                ninja \
 	            fontconfig-dev \
 	            gobject-introspection-dev \
 	            lcms2-dev \
@@ -28,6 +29,7 @@ RUN         apk add --no-cache --virtual .build-deps \
 WORKDIR     /poppler-poppler-${version}
 
 RUN         cmake \
+                -G Ninja \
                 -DENABLE_BOOST=ON \
                 . && \
             cmake --build . && \
