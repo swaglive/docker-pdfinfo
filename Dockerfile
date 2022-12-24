@@ -45,6 +45,8 @@ ENTRYPOINT  ["pdfinfo"]
 CMD         ["--help"]
 
 RUN         apk add --no-cache --virtual .run-deps \
+                libstdc++ \
+                libcurl \
                 freetype \
                 fontconfig \
                 libjpeg-turbo \
