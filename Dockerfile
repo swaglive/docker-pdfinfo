@@ -29,6 +29,7 @@ RUN         apk add --no-cache --virtual .build-deps \
 WORKDIR     /poppler-poppler-${version}
 
 RUN         mkdir build && \
+            cd build && \
             cmake \
                 -G Ninja \
                 -DENABLE_BOOST=ON \
